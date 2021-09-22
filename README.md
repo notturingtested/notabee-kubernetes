@@ -107,7 +107,7 @@ If you have extra time, or are feeling ambitious, here are some extra assignment
   This will require creating a rails database migration.
 </details>
 
-## 💯
+## Feeling 💯
 
 Shawn Hornet and the rest of us SimpleNexians will be very impressed if you complete this task!
 
