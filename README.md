@@ -33,7 +33,7 @@ Once you've verified that all of these prerequisites are installed and functiona
 8. Enter the `frontend` directory, eg `cd ../frontend`
 9. Run `yarn install` (install npm dependencies)
 10. Start the Rails server by entering the `api` directory and running `rails s`
-11. Start the Vue server by entering the `frontend` directory and running `yarn serve`
+11. In a separate terminal, start the Vue server by entering the `frontend` directory and running `yarn serve`
 
 **At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3000.** Play around with the app!
 
