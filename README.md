@@ -85,13 +85,33 @@ Time Estimate: 1 hour
   There's a one-line, one-word fix for this in the backend.
 </details>
 
-3. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
+3. You'll notice that the delete button doesn't really work right now — it just shows an alert. Implement a new GraphQL Mutation that deletes the note and refreshes the data when that button is clicked.
+<details>
+  <summary>Hint</summary>
+  Try to study and understand what the app is doing for the <code>AddNote</code> mutation, since this will behave very similarly.
+</details>
+
+## Next-Level
+
+If you have extra time, or are feeling ambitious, here are some extra assignments you can take on.
+
+1. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
 <details>
   <summary>Hint</summary>
   Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
 </details>
 
+2. Shawn Hornet is nearly done with Hamlet, and he realizes we wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this field in the UI
+<details>
+  <summary>Hint</summary>
+  This will require creating a rails database migration.
+</details>
 
+## 💯
+
+Shawn Hornet and the rest of us SimpleNexians will be very impressed if you complete this task!
+
+1. Create a `Dockerfile` for both the frontend and the backend, and a `docker-compose.yml` file that builds and runs those docker images in such a way that by running `docker-compose up` you can see Notabee running.
 
 
 
