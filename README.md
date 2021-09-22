@@ -43,10 +43,10 @@ Once you've verified that all of these prerequisites are installed and functiona
 
 Time Estimate: 1 hour
 
-1. You'll notice that, for each note, there's an empty "Created At" field. Luckily, we already store that information in the `created_at` column of the database. Fetch that information from the DB through GraphQL and surface that in the UI. Bonus points if you make the Timestamp human-friendly
+1. You'll notice that, for each note, there's an empty "Created At" field. Luckily, we already store that information in the `created_at` column of the database. Fetch that information through the Rails GraphQL server and surface that in the UI. Bonus points if you make the Timestamp human-friendly
 <details>
   <summary>Hint</summary>
-  On the frontend, you should add the created_at field to the query in <code>frontend/src/components/NotesDashboard.vue</code> , now just to figure out where it should go on the backend...
+  On the frontend, you should add the created_at field to the query in <code>frontend/src/components/NotesDashboard.vue</code> , now just to figure out where it should be defined on the backend...
 </details>
 
 2. Shawn Hornet really prefers to see his *oldest* notes first and his *newest* notes last. Can you display the notes according to Shawn's preferences?
@@ -65,35 +65,38 @@ Time Estimate: 1 hour
 
 If you have extra time, or are feeling ambitious, here are some extra assignments you can take on.
 
-1. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
-<details>
-  <summary>Hint</summary>
-  Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
-</details>
-
-2. Shawn Hornet is nearly done with Hamlet, and he realizes he wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this field in the UI
+1. Shawn Hornet is nearly done with Hamlet, and he realizes he wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this saved field in the UI
 <details>
   <summary>Hint</summary>
   This will require creating a rails database migration.
 </details>
 
+2. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
+<details>
+  <summary>Hint</summary>
+  Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
+</details>
+
+
 ## Feeling 💯
 
-Shawn Hornet and the rest of us SimpleNexians will be very impressed if you complete this task!
+Shawn Hornet and the rest of us SimpleNexians will be ** very ** impressed if you complete this task!
 
 1. Create a `Dockerfile` for both the frontend and the backend, and a `docker-compose.yml` file that builds and runs those docker images in such a way that by running `docker-compose up` you can see Notabee running.
 
 
 ## Deliverables
 
-Make your repo public and share the repo URL with me at <jmenden@simplenexus.com> with Subject title "Notabee Repo".
+Make your repo public and share the repo URL with me at <jmenden@simplenexus.com> with the Subject title "Notabee Assignment". 
+
+The time estimate is just that -- an estimate. We are not asking you to track your time and so you will not be penalized if it takes you longer or shorter. If you do not finish all of the tasks, or finish them partially, feel free to submit what you have at any point.
 
 ## Getting Oriented & Helpful Resources
 
 In this repo, you'll find two folders:
 * The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
   * The code you will be dealing with is in the `api/app` directory.
-  * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can mostly ignore the `api/app/views` and `api/app/controllers` folders.
+  * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can entirely ignore the `api/app/views` and `api/app/controllers` folders.
   * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
   * Notabee uses the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for GraphQL
 * The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
