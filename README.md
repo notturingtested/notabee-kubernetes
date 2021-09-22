@@ -55,10 +55,14 @@ You should now have a local Vuejs server running on localhost:8080.
 
 In this repo, you'll find two folders:
 * The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is our **backend**
-  * The bulk of the code you will be dealing with is in the `api/app` directory
+  * The code you will be dealing with is in the `api/app` directory.
   * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can mostly ignore the `api/app/views` and `api/app/controllers` folders.
+  * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
+  * We use the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for our GraphQL
 * The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is our **frontend**
-* On our Ruby on Rails app, we run a .
+  * The code you will be dealing with in the frontend is in the `frontend/src` directory
+  * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
+  * On the frontend we use the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to our GraphQL backend
 
 We don't expect you to fully understand any one of these technologies, and don't expect you to spend too much time digging in. None of the required tasks below will require any significant depth of knowledge, and we provide examples within the app that you can use as template for many of the tasks.
 
