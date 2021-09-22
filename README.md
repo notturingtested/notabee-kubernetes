@@ -54,15 +54,15 @@ You should now have a local Vuejs server running on localhost:8080.
 ## Getting Oriented
 
 In this repo, you'll find two folders:
-* The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is our **backend**
+* The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
   * The code you will be dealing with is in the `api/app` directory.
   * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can mostly ignore the `api/app/views` and `api/app/controllers` folders.
   * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
-  * We use the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for our GraphQL
-* The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is our **frontend**
+  * Notabee uses the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for GraphQL
+* The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
   * The code you will be dealing with in the frontend is in the `frontend/src` directory
   * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
-  * On the frontend we use the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to our GraphQL backend
+  * On the frontend Notabee uses the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to the GraphQL backend
   * All of the components used here come from the [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) framework library
 
 GraphQL can be difficult to understand. We've provided a playground for you at `localhost:3000/graphiql` where you can test out GraphQL queries and mutations.
@@ -101,7 +101,7 @@ If you have extra time, or are feeling ambitious, here are some extra assignment
   Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
 </details>
 
-2. Shawn Hornet is nearly done with Hamlet, and he realizes we wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this field in the UI
+2. Shawn Hornet is nearly done with Hamlet, and he realizes he wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this field in the UI
 <details>
   <summary>Hint</summary>
   This will require creating a rails database migration.
