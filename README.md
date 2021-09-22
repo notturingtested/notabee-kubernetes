@@ -35,8 +35,6 @@ Once you've verified that all of these prerequisites are installed and functiona
 10. Start the Rails server by entering the `api` directory and running `rails s`
 11. Start the Vue server by entering the `frontend` directory and running `yarn serve`
 
-(If you're on Mac/Linux, you can also run the `./bootstrap.sh` script from the root directory, which does the exact same things as steps 3-9 above.)
-
 **At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3000.** Play around with the app!
 
 (We are *not* trying to trip you up with any of these steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
