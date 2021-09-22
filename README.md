@@ -47,7 +47,7 @@ In a **second** terminal window...
 
 You should now have a local Vuejs server running on localhost:8080.
 
-**At this point, when you go to localhost:8080 on your local browser, you should see an operational Notabee app with your seeded data from your database**
+**At this point, when you go to localhost:8080 on your local browser, you should see an operational Notabee app with your seeded data from your database.** Play around with the app!
 
 (We are *not* trying to trip you up with any of these steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
 
@@ -63,6 +63,7 @@ In this repo, you'll find two folders:
   * The code you will be dealing with in the frontend is in the `frontend/src` directory
   * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
   * On the frontend we use the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to our GraphQL backend
+  * All of the components used here come from the [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) framework library
 
 GraphQL can be difficult to understand. We've provided a playground for you at `localhost:3000/graphiql` where you can test out GraphQL queries and mutations.
 
@@ -70,14 +71,25 @@ We don't expect you to fully understand any one of these technologies, and don't
 
 # Your Assignment
 
-Time Estimate: 45 minutes
+Time Estimate: 1 hour
 
 1. You'll notice that, for each note, there's an empty "Created At" field. Luckily, we already store that information in the `created_at` column of the database. Fetch that information from the DB through GraphQL and surface that in the UI. Bonus points if you make the Timestamp human-friendly
 <details>
   <summary>Hint</summary>
-  Define the field in `api/app/graphql/types/note_type.rb` on the backend and add it to the query in `frontend/src/components/NotesDashboard.vue` on the frontend
+  On the frontend, you should add the created_at field to the query in <code>frontend/src/components/NotesDashboard.vue</code> , now just to figure out where it should go on the backend...
 </details>
 
+2. Shawn Hornet really prefers to see his *oldest* notes first and his *newest* notes last. Can you display the notes according to Shawn's preferences?
+<details>
+  <summary>Hint</summary>
+  There's a one-line, one-word fix for this in the backend.
+</details>
+
+3. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
+<details>
+  <summary>Hint</summary>
+  Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
+</details>
 
 
 
