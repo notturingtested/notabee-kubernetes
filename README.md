@@ -51,25 +51,7 @@ You should now have a local Vuejs server running on localhost:8080.
 
 (We are *not* trying to trip you up with any of these steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
 
-## Getting Oriented
-
-In this repo, you'll find two folders:
-* The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
-  * The code you will be dealing with is in the `api/app` directory.
-  * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can mostly ignore the `api/app/views` and `api/app/controllers` folders.
-  * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
-  * Notabee uses the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for GraphQL
-* The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
-  * The code you will be dealing with in the frontend is in the `frontend/src` directory
-  * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
-  * On the frontend Notabee uses the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to the GraphQL backend
-  * All of the components used here come from the [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) framework library
-
-GraphQL can be difficult to understand. We've provided a playground for you at `localhost:3000/graphiql` where you can test out GraphQL queries and mutations.
-
-We don't expect you to fully understand any one of these technologies, and don't expect you to spend too much time digging in. None of the required tasks below will require any significant depth of knowledge, and we provide examples within the app that you can use as template for many of the tasks.
-
-# Your Assignment
+## Your Assignment
 
 Time Estimate: 1 hour
 
@@ -114,8 +96,26 @@ Shawn Hornet and the rest of us SimpleNexians will be very impressed if you comp
 1. Create a `Dockerfile` for both the frontend and the backend, and a `docker-compose.yml` file that builds and runs those docker images in such a way that by running `docker-compose up` you can see Notabee running.
 
 
+## Deliverables
 
+Make your repo public and share the repo URL with me at <jmenden@simplenexus.com> with Subject title "Notabee Repo".
 
+## Getting Oriented & Helpful Resources
 
+In this repo, you'll find two folders:
+* The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
+  * The code you will be dealing with is in the `api/app` directory.
+  * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can mostly ignore the `api/app/views` and `api/app/controllers` folders.
+  * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
+  * Notabee uses the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for GraphQL
+* The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
+  * The code you will be dealing with in the frontend is in the `frontend/src` directory
+  * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
+  * On the frontend Notabee uses the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to the GraphQL backend
+  * All of the components used here come from the [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) framework library
 
+GraphQL can be difficult to understand. We've provided a playground for you at `localhost:3000/graphiql` where you can test out GraphQL queries and mutations.
 
+## Questions
+
+Please feel free to reach out to me with any technical or clarifying questions at <jmenden@simplenexus.com>.
