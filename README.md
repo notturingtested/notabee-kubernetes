@@ -17,6 +17,8 @@ There are number of things that you have to have installed on your machine in or
 
 The [Rails Getting Started Guide](https://guides.rubyonrails.org/getting_started.html) includes detailed instructions on how to install these in the "3 Creating New Rails Project" section. Follow all the steps in 3.1, but *do not continue onto any other steps past 3.1*
 
+* You'll also need to install the [vue-cli-service](https://cli.vuejs.org/guide/installation.html), which is not included in the Rails guide above.
+
 Once you've verified that all of these prerequisites are installed and functional, continue with the steps below.
 
 ### Getting going
