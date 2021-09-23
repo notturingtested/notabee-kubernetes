@@ -6,6 +6,19 @@ He needs *your* help to finish the app!
 
 ## Setting Up the App
 
+## Setting Up Docker
+
+  # Windows
+  Follow the steps here to install docker for windows. 
+  https://docs.docker.com/desktop/windows/install/
+  If you get an error that says: 
+  WSL 2 Installation is incomplete.
+  The wsl2 linux kernel is not installed using a separate msi update package
+  Please follow the steps here:
+  https://docs.microsoft.com/en-us/windows/wsl/install-manual
+  
+
+
 ### Prerequisites
 
 There are number of things that you have to have installed on your machine in order for this app to work. These are:
