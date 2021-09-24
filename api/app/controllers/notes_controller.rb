@@ -13,4 +13,13 @@ class NotesController < ApplicationController
       render json: note
     end
   end
+
+  def create_note
+    note = Note.new(title: params[:note_title], body: params[:note_body])
+    if note.save
+      render json: note, status: :created
+    else
+      render json: {}, status: :bad_request
+    end
+  end
 end
