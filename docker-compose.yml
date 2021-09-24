@@ -1,27 +1,27 @@
 version: '3'
 services:
-  mysql:
-    container_name: mysql
+  notabee_mysql:
+    container_name: notabee_mysql
     image: mysql:5.7
     ports:
-      - "3306:3306" 
+      - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - ./mysql:/var/lib/mysql
-  api:
-    container_name: api
+      - ./notabee_mysql:/var/lib/notabee_mysql
+  notabee_api:
+    container_name: notabee_api
     depends_on:
-      - mysql
+      - notabee_mysql
     build:
       context: ./api
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./api:/usr/src/app/api
     entrypoint: ["sh", "entrypoint.sh"]
-  frontend:
-    container_name: frontend
+  notabee_frontend:
+    container_name: notabee_frontend
     build:
       context: ./frontend
     ports:

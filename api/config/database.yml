@@ -12,7 +12,7 @@ default: &default
   username: root
   password: root
   port: 3306
-  host: mysql
+  host: notabee_mysql
 
 development:
   <<: *default
