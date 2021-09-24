@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   notabee_mysql:
     container_name: notabee_mysql
@@ -29,5 +29,6 @@ services:
     stdin_open: true
     volumes:
       - ./frontend:/usr/src/app/frontend
+      - /usr/src/app/frontend/node_modules
     entrypoint: ["sh", "entrypoint.sh"]
 
