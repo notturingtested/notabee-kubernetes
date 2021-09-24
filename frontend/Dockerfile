@@ -1,6 +1,7 @@
 FROM node:12.13 AS frontend-build
-ADD . /usr/src/app/frontend
+COPY . /usr/src/app/frontend
 WORKDIR /usr/src/app/frontend
 RUN npm install --global yarn 
 RUN yarn global add @vue/cli && yarn install
+RUN chmod +x ./entrypoint.sh
 EXPOSE 8080 
