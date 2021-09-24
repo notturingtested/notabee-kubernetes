@@ -8,7 +8,7 @@ He needs *your* help to finish the app!
 
 ## Setting Up Docker
 
-  # Windows
+  ### Windows
   Follow the steps here to install docker for windows. 
   https://docs.docker.com/desktop/windows/install/
   If you get an error that says: 
