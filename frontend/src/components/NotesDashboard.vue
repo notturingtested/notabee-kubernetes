@@ -44,7 +44,7 @@ export default {
         }`
   },
   data: () => ({
-    notes: [] // this data object is automagically filled with the `notes` attributes from the apollo/graphql query aboe
+    notes: [] // this data object is automagically filled with the `notes` attributes from the apollo/graphql query above
   }),
   methods: {
     refetchNotes () {
