@@ -1,6 +1,6 @@
 <template>
   <v-container class="pt-5 mt-5">
-    <div v-if="$apollo.loading">
+    <div v-if="!notes.length">
       Loading...
     </div>
     <div v-else>
@@ -18,13 +18,12 @@
       </v-row>
     </div>
     <AddNote
-      @note-saved="refetchNotes"
+      @note-saved="fetchNotes"
     />
   </v-container> 
 </template>
 
 <script>
-import gql from 'graphql-tag'
 import Note from './Note.vue'
 import AddNote from './AddNote.vue'
 
@@ -34,21 +33,16 @@ export default {
     AddNote,
     Note
   },
-  apollo: {
-    notes: gql`query {
-            notes:getNotes {
-                id
-                title
-                body
-            }
-        }`
+  created () {
+    this.fetchNotes()
   },
   data: () => ({
-    notes: [] // this data object is automagically filled with the `notes` attributes from the apollo/graphql query above
+    notes: []
   }),
   methods: {
-    refetchNotes () {
-      this.$apollo.queries.notes.refetch()
+    async fetchNotes() {
+      let response = await this.$axios.get("/notes")
+      this.notes = response.data
     }
   }
 }

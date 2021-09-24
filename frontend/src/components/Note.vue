@@ -1,7 +1,7 @@
 <template>
   <v-card
     height="300"
-    class="grey darken-3"
+    class="grey darken-3 d-flex flex-column"
     dark
   >
     <v-card-title>
@@ -13,7 +13,9 @@
     <v-card-text height="300">
       {{ note.body }}
     </v-card-text>
+    <v-spacer />
     <v-card-actions>
+      <v-spacer />
       <v-btn
         text
         outlined
@@ -38,6 +40,8 @@ export default {
   methods: {
     deleteNote () {
       alert("Not implemented yet!")
+      // this.$axios.delete(...)
+      // then find a way to refresh the notes data (like we do after adding a note)
     }
   }
 }

@@ -6,97 +6,38 @@ He needs *your* help to finish the app!
 
 ## Setting Up the App
 
-## Setting Up Docker
+Because everybody's computer is a little different, we're going to use [Docker](https://docs.docker.com/get-started/overview/) to start up the app. We don't expect you to know anything about Docker, and will give step by step instructions on how to use it. If you run into any issues with docker and running the app, please email me at <jmenden@simplenexus.com>.
 
-  ### Windows
-  Follow the steps here to install docker for windows. 
-  https://docs.docker.com/desktop/windows/install/
-  If you get an error that says: 
-  WSL 2 Installation is incomplete.
-  The wsl2 linux kernel is not installed using a separate msi update package
-  Please follow the steps here:
-  https://docs.microsoft.com/en-us/windows/wsl/install-manual
-  
+### Downloading Docker
 
+If you don't have Docker, here's how you can set it up. There are a number of tutorials online as well. At the end of the day you need the `docker --version` command and the `docker-compose --version` command to be successful.
 
-### Prerequisites
+Follow the [steps here](https://www.docker.com/products/docker-desktop) to download Docker Desktop, which will also download Docker and Docker Compose for you.
 
-There are number of things that you have to have installed on your machine in order for this app to work. These are:
-* Ruby
-* SQLite3
-* Node.js
-* Yarn
-* Rails
-
-The [Rails Getting Started Guide](https://guides.rubyonrails.org/getting_started.html) includes detailed instructions on how to install these in the "3 Creating New Rails Project" section. Follow all the steps in 3.1, but *do not continue onto any other steps past 3.1*
-
-* You'll also need to install the [vue-cli-service](https://cli.vuejs.org/guide/installation.html), which is not included in the Rails guide above.
-
-Once you've verified that all of these prerequisites are installed and functional, continue with the steps below.
+*(Windows users might need to follow additional [steps here](https://docs.docker.com/desktop/windows/install/) If you get an error that says: `WSL 2 Installation is incomplete.`, that means the wsl2 linux kernel is not installed using a separate msi update package. In that case, please follow the steps [here](https://docs.microsoft.com/en-us/windows/wsl/install-manual).)
 
 ### Getting going
 
-1. Create a github repo named `notabee`
-2. Copy all of the contents of this repo into your new repo
-3. Enter the `api` directory, eg `cd api`
-4. Run `rails db:create` (create the dev database)
-5. Run `rails db:migrate` (migrate the database to the current schema)
-6. Run `rails db:seed` (seed the database with fake data)
-7. Run `bundle install` (install ruby gem dependencies)
-8. Enter the `frontend` directory, eg `cd ../frontend`
-9. Run `yarn install` (install npm dependencies)
-10. Start the Rails server by entering the `api` directory and running `rails s`
-11. In a separate terminal, start the Vue server by entering the `frontend` directory and running `yarn serve`
+Once your `docker` and `docker-compose` are downloaded and working, you should just need to run 1 command!
 
-**At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3000.** Play around with the app!
+1. At the root of the directory, run `docker-compose up`
 
-(We are *not* trying to trip you up with any of these steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
+**At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3001.** Play around with the app!
+
+Now that it's up, all the changes you make to the code should hot-reload, and you shouldn't ever need to restart it. If you do, simply Control-C to tear down the app. Run `docker-compose up` to spin it back up, or if you feel like things are really broken, run `docker-compose build` and then `docker-compose up` to get a totally fresh app.
+
+(We are *not* trying to trip you up with any of these setup steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
 
 ## Your Assignment
 
 Time Estimate: 1 hour
 
-1. You'll notice that, for each note, there's an empty "Created At" field. Luckily, we already store that information in the `created_at` column of the database. Fetch that information through the Rails GraphQL server and surface that in the UI. Bonus points if you make the Timestamp human-friendly
-<details>
-  <summary>Hint</summary>
-  On the frontend, you should add the created_at field to the query in <code>frontend/src/components/NotesDashboard.vue</code> , now just to figure out where it should be defined on the backend...
-</details>
-
-2. Shawn Hornet really prefers to see his *oldest* notes first and his *newest* notes last. Can you display the notes according to Shawn's preferences?
-<details>
-  <summary>Hint</summary>
-  There's a one-line, one-word fix for this in the backend.
-</details>
-
-3. You'll notice that the delete button doesn't really work right now — it just shows an alert. Implement a new GraphQL Mutation that deletes the note and refreshes the data when that button is clicked.
-<details>
-  <summary>Hint</summary>
-  Try to study and understand what the app is doing for the <code>AddNote</code> mutation, since this will behave very similarly.
-</details>
-
-## Next-Level
-
-If you have extra time, or are feeling ambitious, here are some extra assignments you can take on.
-
-1. Shawn Hornet is nearly done with Hamlet, and he realizes he wants a way to keep track of the source of his notes. Add a new field to the `Note` model named `source`, add a text field for Shawn to enter the source when creating a new note, and surface this saved field in the UI
-<details>
-  <summary>Hint</summary>
-  This will require creating a rails database migration.
-</details>
-
-2. The "Delete" button on the notes is in a different place on each note and that looks really disorganized. Can you figure out a way to make the "Delete" button show up in a consistent place on the note component?
-<details>
-  <summary>Hint</summary>
-  Maybe there's a way to utilize Vuetify's out-of-the-box <a href="https://vuetifyjs.com/en/components/grids/" target="_blank">grid system</a> here?
-</details>
+1. You'll notice that, for each note in the UI, there's an empty "Created at" field. Luckily, we already store that information in the `created_at` column of the database. The Vue app should already fetch this information from the server for you. Figure out a way to surface that field in the UI in a human readable format.
 
 
-## Feeling 💯
+2. In the code for the server you'll notice in `routes.rb` and the `notes_controller.rb` that we have a method for fetching an individual note, `/notes/:note_id`. If you run `curl -v localhost:3001/notes/1`, you'll see you receive back a `204 No Content`. You'll see there's pseudocode in the `notes_controller.rb` walking you through how to implement this method. Write this out so that when you call the server at `/notes/1`, it returns a JSON of the requested note.
 
-Shawn Hornet and the rest of us SimpleNexians will be ** very ** impressed if you complete this task!
-
-1. Create a `Dockerfile` for both the frontend and the backend, and a `docker-compose.yml` file that builds and runs those docker images in such a way that by running `docker-compose up` you can see Notabee running.
-
+3. You'll notice that the delete button doesn't really work right now — it just shows an alert. Implement a new server method that deletes the note, and then refresh the page with the valid data. We've already setup the route in `routes.rb`, and stubbed it out in `notes_controller.rb`, and we have some pseudocode in `Note.vue` to get you started.
 
 ## Deliverables
 
@@ -109,16 +50,13 @@ The time estimate is just that -- an estimate. We are not asking you to track yo
 In this repo, you'll find two folders:
 * The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
   * The code you will be dealing with is in the `api/app` directory.
-  * Although Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, Notabee actually runs a [GraphQL](https://graphql.org/) server, so for the purposes of this exercise, you can entirely ignore the `api/app/views` and `api/app/controllers` folders.
-  * The files that will most interest you will be found in `api/app/graphql` and `api/app/models`
-  * Notabee uses the [GraphQL Ruby](https://graphql-ruby.org/getting_started) library for GraphQL
+  * Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, but we're only using Rails as an API. Meaning, for the purposes of this exercise, you can entirely ignore the `api/app/views` folder.
+  * The files that will most interest you will be found in `api/app/controllers` and `api/app/models`
 * The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
   * The code you will be dealing with in the frontend is in the `frontend/src` directory
   * Specifically, the `frontend/src/App.vue` and `frontend/src/components` files
-  * On the frontend Notabee uses the [Vue Apollo](https://apollo.vuejs.org/guide/apollo/) library to connect to the GraphQL backend
+  * Notabee's frontend uses the [axios](https://axios-http.com/) package to communicate with the server.
   * All of the components used here come from the [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify/) framework library
-
-GraphQL can be difficult to understand. We've provided a playground for you at `localhost:3000/graphiql` where you can test out GraphQL queries and mutations.
 
 ## Questions
 
