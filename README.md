@@ -18,7 +18,7 @@ Follow the [steps here](https://www.docker.com/products/docker-desktop) to downl
 
 ### Getting going
 
-Once you `docker` and `docker-compose` are downloaded and working, you should just need to run 1 command!
+Once your `docker` and `docker-compose` are downloaded and working, you should just need to run 1 command!
 
 1. At the root of the directory, run `docker-compose up`
 
