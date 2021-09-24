@@ -1,12 +1,17 @@
 import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
-import { createProvider } from './vue-apollo'
+import axios from 'axios'
+
+const axiosInstance = axios.create({
+  baseURL: 'http://localhost:3000',
+})
 
 Vue.config.productionTip = false
 
+Vue.prototype.$axios = axiosInstance
+
 new Vue({
   vuetify,
-  apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount('#app')

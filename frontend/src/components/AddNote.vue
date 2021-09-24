@@ -75,7 +75,6 @@
 </template>
 
 <script>
-import gql from 'graphql-tag'
 export default {
   name: 'AddNote',
   data: () => ({
@@ -89,30 +88,18 @@ export default {
       this.$refs.form.validate()
     },
     async save (dialog) {
-      await this.sendMutation()
+      await this.createNote()
       this.$emit('note-saved')
       dialog.value = false
       this.noteTitle = ''
       this.noteBody = ''
       this.loading = false
     },
-    sendMutation () {
+    createNote () {
       return new Promise((resolve, reject) => {
-        this.$apollo.mutate({
-          // Query
-          mutation: gql`mutation ($noteTitle: String!, $noteBody: String!) {
-            addNote(input: { params: { title: $noteTitle, body: $noteBody  }}) {
-              note {
-                id
-                title
-                body
-              }
-            }
-          }`,
-          variables: {
-            noteTitle: this.noteTitle,
-            noteBody: this.noteBody
-          },
+        this.$axios.post('/notes', {
+          "note_title": this.noteTitle,
+          "note_body": this.noteBody
         }).then(() => {
           resolve()
         }).catch(err => {
