@@ -1,6 +1,7 @@
 FROM node:lts-alpine AS frontend-build
-COPY . /usr/src/app/frontend
 WORKDIR /usr/src/app/frontend
+COPY package.json ./
+COPY yarn.lock ./
 RUN yarn install
+COPY . .
 RUN chmod +x ./entrypoint.sh
-EXPOSE 8080 
