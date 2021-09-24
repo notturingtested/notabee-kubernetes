@@ -50,7 +50,7 @@ The time estimate is just that -- an estimate. We are not asking you to track yo
 In this repo, you'll find two folders:
 * The `api` folder is a [Ruby on Rails API](https://guides.rubyonrails.org/getting_started.html) — this is Notabee's **backend**
   * The code you will be dealing with is in the `api/app` directory.
-  * Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, but we're only using Rails as an API. Meaning, for the purposes of this exercise, you can entirely ignore the `api/app/views` folder.
+  * Rails is traditionally a [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) framework, but we're only using Rails as an API. In `api/app`, you'll only find `models` and `controllers` folders, no `views`.
   * The files that will most interest you will be found in `api/app/controllers` and `api/app/models`
 * The `frontend` folder, which is a [Vue.js](https://vuejs.org/v2/guide/) Single-Page App — this is Notabee's **frontend**
   * The code you will be dealing with in the frontend is in the `frontend/src` directory
