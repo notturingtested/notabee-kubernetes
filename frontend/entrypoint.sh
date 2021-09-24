@@ -1,3 +1,3 @@
 #!/bin/sh
-yarn global add @vue/cli && yarn install
+yarn global add @vue/cli
 yarn serve 
