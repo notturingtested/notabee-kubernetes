@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://localhost:3001',
 })
 
 Vue.config.productionTip = false
