@@ -41,7 +41,9 @@ Time Estimate: 1 hour
 
 ## Deliverables
 
-Make your repo public and share the repo URL with me at <jmenden@simplenexus.com> with the Subject title "Notabee Assignment". 
+You should have created this repo from a Github Classroom link provided by SimpleNexus. In that case, all you need to do is push all of your code to the `main` branch of your private repo, and send an email to <jmenden@simplenexus.com> letting me know you completed the assignment.
+
+Please do not make this repo or any contents of it public.
 
 The time estimate is just that -- an estimate. We are not asking you to track your time and so you will not be penalized if it takes you longer or shorter. If you do not finish all of the tasks, or finish them partially, feel free to submit what you have at any point.
 
