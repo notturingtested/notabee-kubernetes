@@ -14,7 +14,7 @@ If you don't have Docker, here's how you can set it up. There are a number of tu
 
 Follow the [steps here](https://www.docker.com/products/docker-desktop) to download Docker Desktop, which will also download Docker and Docker Compose for you.
 
-*(Windows users might need to follow additional [steps here](https://docs.docker.com/desktop/windows/install/) If you get an error that says: `WSL 2 Installation is incomplete.`, that means the wsl2 linux kernel is not installed using a separate msi update package. In that case, please follow the steps [here](https://docs.microsoft.com/en-us/windows/wsl/install-manual).)*
+*(Windows users might need to follow additional [steps here](https://docs.docker.com/desktop/windows/install/). If you get an error that says: `WSL 2 Installation is incomplete`, that means the wsl2 linux kernel is not installed using a separate msi update package. In that case, please follow the steps [here](https://docs.microsoft.com/en-us/windows/wsl/install-manual).)*
 
 ### Getting going
 
