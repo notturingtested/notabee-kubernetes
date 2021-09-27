@@ -45,7 +45,7 @@ Your Name: ...
 Your Email: ...
 *(This repo is entirely private so your name and email will not be shared outside of SimpleNexus)*
 
-You should have created this repo from a Github Classroom link provided by SimpleNexus. In that case, all you need to do is push all of your code to the `main` branch of your private repo, and send an email to <jmenden@simplenexus.com> with a link to your repo letting me know you completed the assignment.
+You should have created this repo from a Github Classroom link provided by SimpleNexus. In that case, once you have completed the assignment, send an email to <jmenden@simplenexus.com> with a link to your repo letting me know you completed the assignment.
 
 Please do not make this repo or any contents of it public.
 
