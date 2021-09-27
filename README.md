@@ -24,7 +24,7 @@ Once your `docker` and `docker-compose` are downloaded and working, you should j
 
 **At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3001.** Play around with the app!
 
-Now that it's up, all the changes you make to the code should hot-reload, and you shouldn't ever need to restart it. If you do, simply Control-C to tear down the app. Run `docker-compose up` to spin it back up, or if you feel like things are really broken, run `docker-compose build` and then `docker-compose up` to get a totally fresh app.
+Now that it's up, all the changes you make to the code should hot-reload, and you shouldn't ever need to restart it. If you do, simply Control-C to tear down the app. Run `docker-compose up --build` to spin it back up, or if you feel like things are really broken, run `docker-compose build` and then `docker-compose up` to get a totally fresh app.
 
 (We are *not* trying to trip you up with any of these setup steps, and we recognize that everybody's machine might work a little bit differently. If you run into an issues up to this point, please send me an email at <jmenden@simplenexus.com>)
 
