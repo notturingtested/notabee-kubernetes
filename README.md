@@ -20,7 +20,7 @@ Follow the [steps here](https://www.docker.com/products/docker-desktop) to downl
 
 Once your `docker` and `docker-compose` are downloaded and working, you should just need to run 1 command!
 
-1. At the root of the directory, run `docker-compose up`
+1. At the root of the directory, run `docker-compose up --build`
 
 **At this point, when you go to localhost:8080 on your local browser, you should see your Vuejs app, populated with data from your Rails server on localhost:3001.** Play around with the app!
 
