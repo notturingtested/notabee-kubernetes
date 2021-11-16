@@ -35,8 +35,3 @@ EOF
 kubectl apply -f ./.kubernetes/notabee-mysql-deployment.yaml -f ./.kubernetes/notabee-mysql-service.yaml
 #applies nginx ingress and waits until it is up and ready. 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
-sleep 5
-kubectl wait --namespace ingress-nginx \
-  --for=condition=ready pod \
-  --selector=app.kubernetes.io/component=controller \
-  --timeout=90s
