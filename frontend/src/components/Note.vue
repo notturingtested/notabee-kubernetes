@@ -40,8 +40,8 @@ export default {
   methods: {
     deleteNote () {
       alert("Not implemented yet!")
+      console.log()
       // this.$axios.delete(...)
-      // then find a way to refresh the notes data (like we do after adding a note)
     }
   }
 }

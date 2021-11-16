@@ -27,5 +27,6 @@ spec:
             - containerPort: 8080
           resources: {}
           stdin: true
+          imagePullPolicy: Always
       restartPolicy: Always
 status: {}

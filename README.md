@@ -1,1 +1,10 @@
-https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/
+kubectl version --client
+docker container ls
+
+kubectl get deployments
+
+kubectl get services
+
+kubectl get pods
+
+kind delete cluster

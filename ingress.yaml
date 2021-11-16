@@ -1,11 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: frontend-ingress
 spec:
   rules:
-    - host: notabee.test
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix
@@ -14,10 +13,18 @@ spec:
                 name: notabee-frontend
                 port:
                   number: 8080
-    - host: notabee.api
-      http:
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backend-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - http:
         paths:
-          - path: /api
+          - path: /api/(.*)
             pathType: Prefix
             backend:
               service:
