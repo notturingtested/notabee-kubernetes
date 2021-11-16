@@ -31,7 +31,8 @@ nodes:
     hostPort: 443
     protocol: TCP
 EOF
-
+#add mysql for demo purposes.
+kubectl apply -f ./.kubernetes/notabee-mysql-deployment.yaml -f ./.kubernetes/notabee-mysql-service.yaml
 #applies nginx ingress and waits until it is up and ready. 
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 sleep 5
