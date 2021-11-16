@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {}
+  creationTimestamp: null
+  labels:
+    app: notabee-frontend
+  name: notabee-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notabee-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notabee-frontend
+    spec:
+      containers:
+        - image: braydnt/notabee-frontend-minikube
+          name: notabee-frontend
+          ports:
+            - containerPort: 8080
+          resources: {}
+          stdin: true
+          imagePullPolicy: Always
+      restartPolicy: Always
+status: {}
