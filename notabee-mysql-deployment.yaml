@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {}
+  creationTimestamp: null
+  labels:
+    app: notabee-mysql
+  name: notabee-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notabee-mysql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notabee-mysql
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: root
+          image: mysql:5.7
+          name: notabee-mysql
+          ports:
+            - containerPort: 3306
+          resources: {}
+      restartPolicy: Always
+status: {}

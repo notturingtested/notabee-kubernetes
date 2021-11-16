@@ -12,7 +12,7 @@ default: &default
   username: root
   password: root
   port: 3306
-  host: notabee_mysql
+  host: notabee-mysql.default.svc.cluster.local
 
 development:
   <<: *default

@@ -1,34 +1,40 @@
 version: '3.8'
 services:
   notabee_mysql:
-    container_name: notabee_mysql
+    container_name: notabee-mysql
+    restart: always
     image: mysql:5.7
     ports:
       - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - ./notabee_mysql:/var/lib/notabee_mysql
-  notabee_api:
-    container_name: notabee_api
+    # volumes:
+    #   - ./notabee_mysql:/var/lib/notabee_mysql
+
+  notabee_backend:
+    container_name: notabee-backend
+    restart: always
     depends_on:
-      - notabee_mysql
+      - notabee-mysql
     build:
-      context: ./api
+      context: ./backend
+    image: braydnt/notabee-backend-minikube
     ports:
       - "3001:3000"
-    volumes:
-      - ./api:/usr/src/app/api
-    entrypoint: ["sh", "entrypoint.sh"]
+    # volumes:
+    #   - ./backend:/usr/src/app/backend
+
   notabee_frontend:
-    container_name: notabee_frontend
+    container_name: notabee-frontend
+    restart: always
     build:
       context: ./frontend
+    image: braydnt/notabee-frontend-minikube
     ports:
       - "8080:8080"
     stdin_open: true
-    volumes:
-      - ./frontend:/usr/src/app/frontend
-      - /usr/src/app/frontend/node_modules
-    entrypoint: ["sh", "entrypoint.sh"]
+    # volumes:
+    #   - ./frontend:/usr/src/app/frontend
+    #   - /usr/src/app/frontend/node_modules
+
 

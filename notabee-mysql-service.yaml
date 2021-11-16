@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: notabee-mysql
+  name: notabee-mysql
+spec:
+  ports:
+    - name: "3307"
+      port: 3307
+      targetPort: 3306
+  selector:
+    app: notabee-mysql
+status:
+  loadBalancer: {}

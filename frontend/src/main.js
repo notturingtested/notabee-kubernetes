@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: 'http://notabee-backend.default.svc.cluster.local:3001',
 })
 
 Vue.config.productionTip = false

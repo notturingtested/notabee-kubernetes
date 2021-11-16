@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {}
+  creationTimestamp: null
+  labels:
+    io.kompose.service: notabee-backend
+  name: notabee-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notabee-backend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notabee-backend
+    spec:
+      containers:
+        - image: braydnt/notabee-backend-minikube
+          name: notabee-backend
+          ports:
+            - containerPort: 3000
+          resources: {}
+      restartPolicy: Always
+status: {}

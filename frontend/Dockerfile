@@ -5,3 +5,4 @@ COPY yarn.lock ./
 RUN yarn install
 COPY . .
 RUN chmod +x ./entrypoint.sh
+ENTRYPOINT ["/bin/sh", "./entrypoint.sh" ]
