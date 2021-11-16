@@ -20,7 +20,7 @@ services:
       context: ./backend
     image: braydnt/notabee-backend-minikube
     ports:
-      - "3001:3000"
+      - "3000:3000"
     # volumes:
     #   - ./backend:/usr/src/app/backend
 
