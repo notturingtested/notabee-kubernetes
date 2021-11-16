@@ -6,11 +6,9 @@ metadata:
     app: notabee-frontend
   name: notabee-frontend
 spec:
-  type: NodePort
   ports:
     - name: http
       port: 8080
-      nodePort: 30036
       targetPort: 8080
   selector:
     app: notabee-frontend
